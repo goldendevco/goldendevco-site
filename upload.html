@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golden Devco Upload Center</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(212,175,55,.18), transparent 32%),
+        linear-gradient(135deg, #050505 0%, #151515 55%, #2a2108 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .upload-card {
+      width: 100%;
+      max-width: 700px;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(212,175,55,.35);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #f5d76e;
+      font-size: 48px;
+    }
+
+    p {
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .upload-box {
+      border: 2px dashed rgba(212,175,55,.5);
+      border-radius: 20px;
+      padding: 50px 20px;
+      text-align: center;
+      background: rgba(255,255,255,.03);
+    }
+
+    input[type="file"] {
+      margin-top: 20px;
+      color: white;
+    }
+
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #d4af37, #8a6d1d);
+      color: #090909;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: .92;
+    }
+
+    .status {
+      margin-top: 20px;
+      color: #f5d76e;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="upload-card">
+    <h1>Upload Center</h1>
+
+    <p>
+      Upload files, images, assets, documents, and media into the Golden Devco cloud storage system.
+    </p>
+
+    <div class="upload-box">
+      <h2>Select File</h2>
+
+      <input type="file" id="fileInput" />
+
+      <button onclick="fakeUpload()">
+        Upload File
+      </button>
+
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+  <script>
+    function fakeUpload() {
+      const fileInput = document.getElementById('fileInput');
+      const status = document.getElementById('status');
+
+      if (!fileInput.files.length) {
+        status.innerText = 'Please select a file first.';
+        return;
+      }
+
+      const fileName = fileInput.files[0].name;
+
+      status.innerText =
+        'Upload system placeholder active. Selected file: ' + fileName;
+
+      /*
+        NEXT STEP:
+        Connect this button to:
+        - Railway upload endpoint
+        - S3-compatible bucket API
+        - n8n webhook
+      */
+    }
+  </script>
+
+</body>
+</html>
