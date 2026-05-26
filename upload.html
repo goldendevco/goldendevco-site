@@ -93,7 +93,7 @@
 
       <input type="file" id="fileInput" />
 
-      <button onclick="fakeUpload()">
+      <button onclick="uploadFile()">
         Upload File
       </button>
 
@@ -102,7 +102,7 @@
   </div>
 
   <script>
-    function fakeUpload() {
+    async function uploadFile() {
       const fileInput = document.getElementById('fileInput');
       const status = document.getElementById('status');
 
