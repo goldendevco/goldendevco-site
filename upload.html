@@ -128,14 +128,14 @@
       try {
 
         const response = await fetch(WEBHOOK_URL, {
-          method: "POST",
+  method: "POST",
 
-          headers: {
-            "x-upload-secret": "Dawgsfan69!"
-          },
+  headers: {
+    "Authorization": "Dawgsfan69!"
+  },
 
-          body: formData
-        });
+  body: formData
+});
 
         const result = await response.text();
 
