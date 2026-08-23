@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /portal.html
+Disallow: /upload.html
+
+Sitemap: https://goldendevco.com/sitemap.xml
