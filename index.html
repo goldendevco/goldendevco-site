@@ -12,7 +12,7 @@
   </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#top" aria-label="Golden Devco home"><img src="golden-devco-logo-new.svg" alt="Golden Devco"></a><nav class="nav-links" aria-label="Primary navigation"><a href="#about">About</a><a href="#focus">Focus</a><a href="#ventures">Ventures</a><a href="#contact">Strategic Partnerships</a></nav></div></header>
+<header><div class="wrap nav"><a class="brand" href="#top" aria-label="Golden Devco home"><img id="brand-logo" alt="Golden Devco"></a><nav class="nav-links" aria-label="Primary navigation"><a href="#about">About</a><a href="#focus">Focus</a><a href="#ventures">Ventures</a><a href="#contact">Strategic Partnerships</a></nav></div></header>
 <main id="top">
 <section class="hero"><div class="wrap"><p class="eyebrow">Operations. Innovation. Applied Intelligence.</p><h1>An operating company turned innovation company.</h1><p>Golden Devco transforms years of real-world business experience into AI, automation, and technology ventures built for how companies actually operate.</p><div class="hero-actions"><a class="button button-primary" href="#about">Our Evolution</a><a class="button button-secondary" href="#contact">Partner With Us</a></div></div></section>
 <section id="about"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Our Evolution</p><h2>Built from operating experience, not theory.</h2></div><p>Golden Devco began in transportation and business operations. That experience created a close view of the friction businesses face every day: disconnected systems, repetitive work, poor visibility, and decisions made without enough useful information. Today, we apply those lessons to the development of AI-powered systems, automation, and new technology ventures.</p></div><div class="timeline" aria-label="Golden Devco evolution"><div class="phase"><strong>Operating Foundation</strong><span>Transportation, logistics, business operations, and real-world execution.</span></div><div class="phase"><strong>Applied Automation</strong><span>Connecting workflows, data, software, and intelligent decision support.</span></div><div class="phase"><strong>Venture Innovation</strong><span>Building and supporting scalable AI and technology businesses for the next chapter.</span></div></div></div></section>
@@ -21,4 +21,15 @@
 <section id="contact" class="partner"><div class="wrap partner-inner"><div><p class="eyebrow">Strategic Partnerships</p><h2>We are interested in what is being built next.</h2><p>Golden Devco welcomes conversations with technology companies, AI platforms, design-partner programs, beta and early-access teams, investors, research groups, and operating partners looking for thoughtful real-world testing and collaboration.</p></div><div class="partner-actions"><a class="button button-primary" href="mailto:goldendevco@gmail.com?subject=Golden%20Devco%20Strategic%20Partnership">Contact Golden Devco</a><a class="button button-secondary" href="tel:+17064261406">(706) 426-1406</a></div></div></section>
 </main>
 <footer><div class="wrap footer-inner"><span>© 2026 Golden Devco, Inc.</span><span>Applied AI · Automation · Venture Innovation</span></div></footer>
+<script>
+(async()=>{
+  const logo=document.getElementById('brand-logo');
+  try{
+    const parts=await Promise.all([1,2,3,4].map(n=>fetch(`assets/logo-part-${n}.txt?v=2`).then(r=>{if(!r.ok) throw new Error('logo asset'); return r.text();})));
+    logo.src='data:image/webp;base64,'+parts.join('');
+  }catch(e){
+    logo.src='golden-devco-logo-new.svg';
+  }
+})();
+</script>
 </body></html>
